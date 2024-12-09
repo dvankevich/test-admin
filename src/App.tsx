@@ -6,6 +6,7 @@ import { UserList } from "./users";
 import PostIcon from "@mui/icons-material/Book";
 import UserIcon from "@mui/icons-material/Group";
 import { Dashboard } from "./Dashboard";
+import { authProvider } from "./authProvider";
 
 export const App = () => (
   // <Admin layout={Layout} dataProvider={dataProvider}>
@@ -17,7 +18,11 @@ export const App = () => (
   //   />
   //   <Resource name="users" list={UserList} show={ShowGuesser} />
   // </Admin>
-  <Admin dataProvider={dataProvider} dashboard={Dashboard}>
+  <Admin
+    authProvider={authProvider}
+    dataProvider={dataProvider}
+    dashboard={Dashboard}
+  >
     <Resource
       name="posts"
       list={PostList}
