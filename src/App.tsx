@@ -1,4 +1,4 @@
-import { Admin, Resource } from "react-admin";
+import { Admin, Resource, ShowGuesser } from "react-admin";
 import { Layout } from "./Layout";
 import { dataProvider } from "./dataProvider";
 import { PostList } from "./posts";
@@ -7,6 +7,6 @@ import { UserList } from "./users";
 export const App = () => (
   <Admin layout={Layout} dataProvider={dataProvider}>
     <Resource name="posts" list={PostList} />
-    <Resource name="users" list={UserList} />
+    <Resource name="users" list={UserList} show={ShowGuesser} />
   </Admin>
 );
