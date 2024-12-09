@@ -11,8 +11,15 @@ import {
   TextInput,
 } from "react-admin";
 
+const postFilters = [
+  // eslint-disable-next-line react/jsx-key
+  <TextInput source="q" label="Search" alwaysOn />,
+  // eslint-disable-next-line react/jsx-key
+  <ReferenceInput source="userId" label="User" reference="users" />,
+];
+
 export const PostList = () => (
-  <List>
+  <List filters={postFilters}>
     <Datagrid rowClick={false}>
       <TextField source="id" />
       <ReferenceField source="userId" reference="users" link="show" />
